@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LG_ANSI_Script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Format="ANSIScriptFile" Version="5.00" Date="2021-09-22T10:41:34.191913+10:00">
+  <Required_Meter>
+    <ED_MODEL>U3350</ED_MODEL>
+    <E_Kh />
+    <TARIFF_ID />
+  </Required_Meter>
+  <Required_Meter_Operation>
+    <Program_Option>QOS</Program_Option>
+  </Required_Meter_Operation>
+  <Script_Data>
+    <Table_Data_Element Sequence="1">
+      <Table_Data Table_Type="M" Table_Number="50" Table_Length="48" Table_Offset="0">
+        <Binary_Data>013C8408500A6400023C8408500A6400033C8408500A6400000000000000000000000000000000000000000000000000</Binary_Data>
+      </Table_Data>
+    </Table_Data_Element>
+    <Table_Data_Element Sequence="2">
+      <Table_Data Table_Type="S" Table_Number="7" Table_Length="5" Table_Offset="0">
+        <Binary_Data>0008000000</Binary_Data>
+      </Table_Data>
+    </Table_Data_Element>
+    <Table_Data_Element Sequence="3">
+      <Table_Data Table_Type="S" Table_Number="7" Table_Length="6" Table_Offset="0">
+        <Binary_Data>07080002000F</Binary_Data>
+      </Table_Data>
+    </Table_Data_Element>
+  </Script_Data>
+</LG_ANSI_Script>
