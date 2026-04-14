@@ -1,0 +1,402 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0091)https://support.silverspringnet.com/selfservice/viewContent.do -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+ 
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+<STYLE>
+body		{font-family: verdana, arial,helvetica,sans-serif;  margin: 0px 0px 0px 0px; font-size:12px;}
+form 		{margin: 0px;}
+p,td,select,option  { font-family: verdana, arial, helvetica; font-size: 12px; font-weight: normal;};
+
+A:link 		{ COLOR: #003399; text-decoration: none; }
+A:visited 	{ COLOR: #003399; text-decoration: none; }
+A:hover		{ COLOR: #003399; text-decoration: underline; }
+A:active 	{ COLOR: #003399; }
+
+.body 		{ font-size: 12px; font-weight: normal;}
+.body_bold 	{ font-size: 12px; font-weight: bold; }
+.document_title {font-size: 18px; color: #0E5899; font-weight: bold; }
+.tabbar		{ background-color: #005581; font-size: 12px; color: #ffffff; font-weight: bold; }
+.Keywords 	{ display:none; }
+.date	 	{font-size:12px;color:#FFFFFF;font-weight:normal;}
+.date_bold 	{font-size:12px;color:#FFFFFF;font-weight:bold;}
+.codeblock      {white-space: nowrap; font-family: monospace; display: inline-block; unicode-bidi: embed; background-color: rgb(249, 249, 249); BORDER-BOTTOM: black 2px dashed; BORDER-LEFT: black 2px dashed; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: black 2px dashed; BORDER-RIGHT: black 2px dashed; PADDING-TOP: 10px}
+table#tblInserted tr td{ height: expression(parseFloat(this.offsetHeight) < '25' ? '25px' : this.offsetHeight + 'px') }
+</STYLE>
+ 
+<SCRIPT language="Javascript">
+   function checkClientDate() {
+		var DateInMlsGMT = Number(document.getElementById('LMDInMls').innerHTML);
+		var docLocalDate = new Date(DateInMlsGMT);
+
+		var curr_date = docLocalDate.getDate();
+		var curr_month = docLocalDate.getMonth();
+		curr_month++;
+		var curr_year = docLocalDate.getFullYear();
+		document.getElementById('LMD').innerHTML =curr_month + "-" + curr_date + "-" + curr_year;
+   }
+
+   function openConsole(docId, attachmentFileName, name ) {
+     if (window.customOpenConsole) {
+         customOpenConsole(encodeURIComponent(attachmentFileName), name);
+     } else {
+          headerFrame = window.parent.parent.frames["Header"];
+          if (headerFrame != null && headerFrame.openDocLink != null)
+              headerFrame.openDocAttachment(docId, attachmentFileName, name);
+     }
+   }
+
+   function openDocumentLink(externalId, languageId) {
+
+      if (window.parent.openDocLink != null) {
+          window.parent.openDocLink(externalId, languageId);
+      } else {
+          headerFrame = window.parent.parent.frames["Header"];
+          if (headerFrame != null && headerFrame.openDocLink != null)
+              headerFrame.openDocLink(externalId, languageId);
+          else {
+              setTimeout("openDocumentLink('"+externalId+"','"+languageId+"')",500);
+          }
+      }
+   }
+
+   function setTargets() {
+	if( navigator.userAgent.toUpperCase().indexOf("MSIE") == -1) return;
+	var links = document.getElementsByTagName('a');
+	for (var i = 0; i < links.length; i++) {
+		link = links[i];
+		if ( link.href && link.href.indexOf('ftp://') == 0 && (!link.target || link.target == "" ) ) 	 link.target = '_top';
+	}
+   }
+
+   
+</SCRIPT>
+ <TITLE>How to update the MAC ID in UtilityIQ post RMA process? (KB10974) 
+</TITLE> 
+<META name="GENERATOR" content="MSHTML 11.00.9600.18838"></HEAD> 
+<BODY class="body" onload="checkClientDate();setTargets();">
+<TABLE width="100%" border="0" cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD width="100%" align="center" class="document_title" style="padding-bottom: 10px;">How 
+      to update the MAC ID in UtilityIQ post RMA process? (KB10974)</TD></TR>
+  <TR>
+    <TD>
+      <TABLE border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR>
+          <TD class="tabbar" 
+            style="padding: 2px 5px 1px 10px;">Products<BR><IMG width="100" 
+            height="3" alt="" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/sp.gif" 
+            border="0"></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD height="2" class="tabbar"><IMG width="1" height="2" alt="" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/sp.gif" 
+      border="0"></TD></TR>
+  <TR>
+    <TD class="body" style="padding: 10px;">
+      <TABLE border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR>
+          <TD class="body_bold" style="padding-bottom: 5px;">Advanced Metering 
+            Manager (AMM)</TD></TR>
+        <TR>
+          <TD class="body"></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD>
+      <TABLE border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR>
+          <TD class="tabbar" style="padding: 2px 5px 1px 10px;">Issue<BR><IMG 
+            width="100" height="3" alt="" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/sp.gif" 
+            border="0"></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD height="2" class="tabbar"><IMG width="1" height="2" alt="" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/sp.gif" 
+      border="0"></TD></TR>
+  <TR>
+    <TD class="body" style="padding: 10px;"><content><IMG width="0" height="0" 
+      title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic8.jpg" 
+      border="0">This KB Article documents the procedure to update the MAC ID in 
+      UtlityIQ after RMA process.&nbsp; The configurations should be updated 
+      before customer deploy the new device in the field.<BR></content> 
+  <BR></TD></TR>
+  <TR>
+    <TD>
+      <TABLE border="0" cellspacing="0" cellpadding="0">
+        <TBODY>
+        <TR>
+          <TD class="tabbar" 
+            style="padding: 2px 5px 1px 10px;">Resolution<BR><IMG width="100" 
+            height="3" alt="" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/sp.gif" 
+            border="0"></TD></TR></TBODY></TABLE></TD></TR>
+  <TR>
+    <TD height="2" class="tabbar"><IMG width="1" height="2" alt="" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/sp.gif" 
+      border="0"></TD></TR>
+  <TR>
+    <TD class="body" style="padding: 10px;"><content><FONT size="5"><U><B>Step 
+      1: Review the technical information</B></U></FONT><BR>
+      <UL>
+        <LI>
+        <P>Review the MAC ID and related technical information of the new and 
+        replaced device.&nbsp; For example:</P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="408" height="574" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic1-masked.jpg" 
+        border="0"></P></BLOCKQUOTE>
+      <P><FONT size="5"><U><B><BR></B></U></FONT></P>
+      <P><FONT size="5"><U><B>Step 2: Export the Device File</B></U></FONT></P>
+      <UL>
+        <LI>
+        <P>Login to CustomerIQ and search by MAC ID which is the unique 
+        identifier provided in the table above.&nbsp; Please ensure the drop 
+        down list is set to <B>MAC Address</B> when the search is 
+        triggered.</P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="1269" height="532" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic2-masked.jpg" 
+        border="0"></P>
+        <P><BR></P></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Click the <B>Export Data</B> button shown on upper right hand of 
+        device details screen to export the “old” device details. Click the 
+        <B>Save</B> button on the pop up window afterwards.<BR></P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="1243" height="440" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic3.jpg" 
+        border="0"></P>
+        <P><BR></P></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Right click on the Job hyperlink at the upper left corner and open 
+        the link (Export Details Page) in a new tab.<BR></P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="1158" height="491" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic4.jpg" 
+        border="0"></P>
+        <P><BR></P></BLOCKQUOTE>
+      <UL>
+        <LI>Click on the <B>Latest Results</B> link at the upper left corner of 
+        the Export Details Page.&nbsp; A file will be exported for 
+        modification.&nbsp; It may take up to five minutes for the export 
+        process especially for large customer. The <B>Run Status</B> will show 
+        <I>Running</I> initially.</LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="896" height="502" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic5.jpg" 
+        border="0"></P>
+        <P><BR></P></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Refresh the page by clicking the <B>Latest Results</B> link.&nbsp; 
+        Once the file export process is completed, the page will update with the 
+        <B>Export Files</B> button.</P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="735" height="248" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic6.jpg" 
+        border="0"><BR></P></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Click on the <B>Export Files</B> button and a little icon will 
+        appear.&nbsp; Right click on the icon to bring up a drop down 
+        menu.&nbsp; Select <B>Save Link As...</B> and save this Old Device file 
+        by typing in the file name.&nbsp; Please see the example below with 
+        <I>"ABC RMA 33143 AP OLD 21EA</I>" as the file name.</P></LI></UL>
+      <BLOCKQUOTE>
+        <P>Note:&nbsp; By default, the file is exported in tvs format.&nbsp; In 
+        order to reimport the file properly, it should be saved as a tab 
+        delimited file after modification.</P>
+        <P><IMG width="945" height="460" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic7-masked.jpg" 
+        border="0"></P></BLOCKQUOTE>
+      <P><BR></P>
+      <P><FONT size="5"><U><B>Step 3: Rename the fields in 
+      UtilityIQ<BR></B></U></FONT></P>
+      <UL>
+        <LI>
+        <P>Change the “Old” device name, Serial Number, and Utility Device ID by 
+        appending "OLD" to each.&nbsp; These fields are unique and they cannot 
+        match the same device information on the “New” import file.</P>
+        <UL>
+          <LI>
+          <P>Click on the <B>Edit AP Details</B> button on the bottom of the 
+          Device Details page.</P></LI></UL></LI></UL>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><IMG width="513" height="136" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic8.jpg" 
+          border="0"></P></BLOCKQUOTE>
+        <UL>
+          <LI>
+          <P>Scroll back up to the top of the Device Details page and all the 
+          editable fields should now be open for modification. Add “OLD” to the 
+          end of the device name, Serial Number, and Utility Device ID.</P>
+          <LI>
+          <P>Details Page before editing</P></LI></UL>
+        <BLOCKQUOTE><IMG width="688" height="215" title="" style="margin: 0px;" 
+          src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic9.jpg" 
+          border="0"><BR></BLOCKQUOTE>
+        <UL>
+          <LI>
+          <P>Details Page after editing</P></LI></UL>
+        <BLOCKQUOTE>
+          <P><IMG width="683" height="212" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic10.jpg" 
+          border="0"></P>
+          <P><BR></P></BLOCKQUOTE></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Retire the old device so that it will never be used again.&nbsp; 
+        Scroll down to the Device Details page and click on <B>Retire this 
+        AP</B> button.</P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="0" height="0" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic11.jpg" 
+        border="0"><IMG width="513" height="136" title="" style="margin: 0px;" 
+        src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic11.jpg" 
+        border="0"></P></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Add a note in the device history with the RMA details. Click the 
+        <B>Device History</B> link on the upper right of the page and enter the 
+        note.</P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="1135" height="240" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic12.jpg" 
+        border="0"></P></BLOCKQUOTE>
+      <P><BR></P>
+      <P><FONT size="5"><U><B>Step 4: Open the Device File in 
+      Excel<BR></B></U></FONT></P>
+      <UL>
+        <LI>
+        <P>Open the old Device File in Excel<BR></P>
+        <UL>
+          <LI>
+          <P>Start a new Excel program<BR></P>
+          <LI>
+          <P>Click the <B>Data</B> tab on top of the page.</P>
+          <LI>
+          <P>Click the <B>Form Text</B> button</P></LI></UL></LI></UL>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><IMG width="857" height="284" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic13.jpg" 
+          border="0"></P></BLOCKQUOTE>
+        <UL>
+          <LI>
+          <P>Change the file format to <B>All Files (*.*)</B></P></LI></UL>
+        <BLOCKQUOTE>
+          <P><B><IMG width="254" height="93" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic14.jpg" 
+          border="0"></B></P></BLOCKQUOTE>
+        <UL>
+          <LI>
+          <P>Locate the file and open</P>
+          <LI>
+          <P>Select <B>Delimited</B> as file type</P></LI></UL>
+        <BLOCKQUOTE><IMG width="595" height="427" title="" style="margin: 0px;" 
+          src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic15.jpg" 
+          border="0"></BLOCKQUOTE>
+        <UL>
+          <LI>
+          <P>Select <B>Tab</B> as the Delimiters</P></LI></UL>
+        <BLOCKQUOTE>
+          <P><IMG width="590" height="432" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic16.jpg" 
+          border="0"></P></BLOCKQUOTE>
+        <UL>
+          <LI>
+          <P>Scroll the bar all the way to the right and highlight all columns. 
+          Select <B>Text</B> as Column data format and click <B>Finish</B> 
+          button.</P></LI></UL>
+        <BLOCKQUOTE>
+          <P><IMG width="592" height="424" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic17.jpg" 
+          border="0"></P></BLOCKQUOTE></BLOCKQUOTE>
+      <P><BR></P>
+      <P><FONT size="5"><U><B>Step 5: Update the Device 
+      File<BR></B></U></FONT></P>
+      <UL>
+        <LI>
+        <P>Modify the device file to become the new import file</P></LI></UL>
+      <UL>
+        <UL>
+          <LI>
+          <P>Change Column F and G from Maintenance to New</P></LI></UL></UL>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><IMG width="784" height="300" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic18.jpg" 
+          border="0"></P></BLOCKQUOTE></BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <UL>
+          <LI>
+          <P>Copy and paste the New device MAC ID into column U and 
+      V</P></LI></UL></BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><IMG width="300" height="200" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic19.jpg" 
+          border="0"></P></BLOCKQUOTE></BLOCKQUOTE>
+      <UL>
+        <UL>
+          <LI>
+          <P>For AP device RMAs, we need to copy and paste the WAN and NAN IP 
+          addresses that are provided. The NAN IPv6 address is under column X 
+          and the WAN IPv6 address is under column AY. If the device is a Relay 
+          then there is no IP address change.</P>
+          <LI>
+          <P>Click the <B>File</B> tab</P>
+          <LI>
+          <P>Select <B>Save As</B> option and save the file as <B>Text (tab 
+          delimited)</B> format. We recommend to name it similar as the export 
+          file.&nbsp; Please see the example below:</P></LI></UL></UL>
+      <P><IMG width="0" height="0" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic20.jpg" 
+      border="0"></P>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><IMG width="415" height="83" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic20.jpg" 
+          border="0"></P></BLOCKQUOTE>
+        <P><BR></P></BLOCKQUOTE>
+      <P><FONT size="5"><U><B>Step 6: Import the Device 
+      File<BR></B></U></FONT></P>
+      <UL>
+        <LI>
+        <P>Import the file</P>
+        <UL>
+          <LI>
+          <P>Bring up UtilityIQ, click the <B>Devices</B> tab and click the 
+          <B>Device Admin</B> tab</P></LI></UL></LI></UL>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><IMG width="639" height="66" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic21.jpg" 
+          border="0"></P></BLOCKQUOTE></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Confirm the following when importing a device file:</P>
+        <UL>
+          <LI>
+          <P>The environment is correct</P>
+          <LI>
+          <P>The Device Type is correct</P></LI></UL></LI></UL>
+      <BLOCKQUOTE>
+        <BLOCKQUOTE>
+          <P><IMG width="655" height="541" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic22-masked.jpg" 
+          border="0"></P></BLOCKQUOTE></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>Select the correct Import Type</P>
+        <LI>
+        <P>Enter the Local File location</P>
+        <LI>
+        <P>Click the <B>Import Devices</B> button</P></LI></UL>
+      <BLOCKQUOTE>
+        <P><IMG width="590" height="318" title="" style="margin: 0px;" src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic23-masked.jpg" 
+        border="0"></P></BLOCKQUOTE>
+      <UL>
+        <LI>
+        <P>It may take one to ten minutes to finish the import process depending 
+        on the size of the customer. Once the import is complete, the following 
+        message will show up.</P></LI></UL>
+      <BLOCKQUOTE><IMG width="1050" height="119" title="" style="margin: 0px;" 
+        src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic24.jpg" 
+        border="0"></BLOCKQUOTE>
+      <BLOCKQUOTE>
+        <P>&nbsp;</P></BLOCKQUOTE>
+      <P><FONT size="5"><U><B>Step 7: Verify after import</B></U></FONT></P>
+      <UL>
+        <LI>
+        <P>Search for the New MAC ID and it will appear in the 
+        UtilityIQ.</P></LI></UL>
+      <BLOCKQUOTE><IMG width="820" height="122" title="" style="margin: 0px;" 
+        src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/KB10974-Pic25.jpg" 
+        border="0"></BLOCKQUOTE></content> <BR></TD></TR>
+  <TR>
+    <TD width="100%" class="tabbar" style="padding: 4px;"><SPAN class="date_bold" 
+      id="LMD_TITLE">Last Modified Date: </SPAN><SPAN class="date" 
+      id="LMD">10-08-2015</SPAN><SPAN id="LMDInMls" 
+      style="display: none;">1444322338000</SPAN><IMG width="5" height="1" alt="" 
+      src="How%20to%20update%20the%20MAC%20ID%20in%20UtilityIQ%20post%20RMA%20process%20(KB10974)_files/sp.gif" 
+      border="0"><SPAN class="date_bold" id="LMD_ID">ID: </SPAN><SPAN class="date">KB10974</SPAN></TD></TR></TBODY></TABLE></BODY></HTML>

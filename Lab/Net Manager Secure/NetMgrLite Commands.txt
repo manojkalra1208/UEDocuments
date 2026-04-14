@@ -1,0 +1,195 @@
+To define a device loaded from a file, use [device] in the command (i.e. -d [device] echo 1)
+
+Command: --help
+net_mgrS Secure Association net_mgr wrapper, Silver Spring Networks
+/apps/ssn/ched/netmgr/net_mgrS version custom-NETMGRS-MAIN-BUILD64 compiled on Oct 25 2013 14:23:25
+
+/apps/ssn/ched/netmgr/net_mgrS long options:
+  --                     All further options are passed to net_mgr
+  --0                    See --here
+  --assocstore=<path>    Set the location of the association store.
+                         (Overrides NMS_ASSOCSTORE.)
+  --auth=<pin>           HSM: Add an authorization code.
+  --a                    Shortcut for --auth.
+  --authfile=<file>      HSM: Read authoriztion codes from a file.
+  --assockey=<key>       Key used to look up an association (-d otherwise)
+  --Ask                  HSM: Prompt for an authentication code.
+  --A                    Shortcut for --Ask.
+  --blobfile=<file>      Set the location of the blobfile.
+  --blobSkey=<file>      Set the location of the blobfile Skey.
+  --bulkassoc=<file>     Bulk association mode.
+                         net_mgrS will ensure an association with every detination in <file>.
+                         Destinations are specified exactly as with -d.
+  --c1219_op=<arg>       Use 'c1219_op' invocation <arg>.
+  --CS2_PKCS11_INI=<arg> Use arg as CS2_PKCS11_INI file.
+  --C=<arg>              Shortcut for --CS2_PKCS11_INI.
+  --debug                Debug level logging output.
+  --force                Force a new association.
+  --help                 This output.
+  --here                 Insert the crypto arguments here in the list of net_mgr arguments.
+                         (When doing so manually.)
+  --HSM_PROPS=<file>     Load HSM properties from specified properties file.
+  --H=<file>             --HSM_PROPS  Note that properties are nicnac names.
+                         Specifically ENTITY_SLOT and PIN are used.  See --prefix
+  --keykeep=<file>       Set the location of the keykeep.store file <default ./>
+                         (Overrides NMS_KEYKEEP.)
+  --manual               Locate the crypto arguments manually (use in case net_mgr has
+                         arguments that net_mgrS does not know about.)
+  --nm=<arg>             See --net_mgr
+  --nms_selftest         Run a self-test routine
+  --net_mgr=<arg>        Use 'net_mgr' invocation <arg>
+                         (Overrides NMS_NET_MGR.)
+  --no_rm                Don't delete temporary files at shutdown.
+  --no_sa                Don't associate, just exit if we cannot continue without one.
+  --N=<file>             Shortcut for --authfile.
+  --pk11lib=<arg>        Provide a path or search term for the pkcs11 driver library.
+                           e.g. 'libcs2_pkcs11.so'.
+  --prefix               Prefix to use for HSM properties, e.g. SSN_SSNGMR
+  --pushnm               Push NM chain of certificates to the device.
+  --pushop               Push operator certificate to the device.
+  --pushpermit           Push permit chain of certificates to the device.
+  --quiet                Suppress association output.
+  --slot                 HSM slot to log in to.
+  --s                    See --slot.
+  --trace                Maximum logging output.
+  --verbose              Verbose (debug) level logging output.
+  --version              Output the version.
+
+/apps/ssn/ched/netmgr/net_mgrS environment variables:
+     (long options always override environment variables.)
+  NMS_ASSOCSTORE         Use the specified file for the association store.
+  NMS_KEYKEEP            Use the specified file for the keykeep.store.
+  NMS_NET_MGR            Specifies the binary to use for net_mgr invocations.
+  NMS_C1219_OP           Specifies the binary to use for c1219_op invocations.
+  CS2_PKCS11_INI         Specifies the cs2_pkcs11.ini file path that contains Utimaco HSM locations.
+  NMS_HSM_SLOT           Specifies the HSM slot number that will be used (--slot).
+  NMS_HSM_AUTH_FILE      Specifies the file that contains the HSM slot authentication parameters (--authfile)
+
+
+Usage: net_mgr_lite <options> <type> ...
+
+ Options:
+   -a <2d> : Sign message with specified sig
+          1st digit - sig type:
+            0: HMAC, 1: RSA, 2: ECDSA, 3: DSA
+          2nd digit - HMAC hash type:
+            0: No sig, 1: SHA1, 2: SHA224, 3: SHA256, 4: SHA384, 5: SHA512
+          For non-HMAC sigs, the 2nd digit has to be '0'
+          Note: The only valid argument is '03'
+   -A <d> : Association ID for security header
+   -b <n>[:<n>[:<n>]] : Initiate a broadcast command on an AP with the specified
+          timestamp [and optional lifetime & TTL]
+   -B <filespec>:<filespec>:<filespec> : Pubkey, sigcert & opcert files for the
+          broadcast command
+   -c { [noip:]<d> | file | [force:][NULL:]dtls} : Use secure net_mgr 
+          Parameter notes:
+            - 'noip:' : Don't include IP addresses in HMACs
+            - <d>     : sequence number
+            - 'file'  : Use association file for sequence number
+            - 'force' : Force a Full DLTS handshake
+            - 'NULL:' : Use unauthenticated DTLS session
+            - 'dtls'  : use DTLS security protocol
+   -C <filespec> : Use FSU smart card for maintenance link, with the specified
+          Scard executable
+   -d <IPv6> : Endpoint IP address
+   -D <d> : Device type for device-specific net_mgr behavior
+   -e <d> : Encrypt message with specified algorithm:
+          1: DES, 2: 3DES, 3: AES/CBC-NoPad,
+          4: AES/CBC-PKCS5Pad, 5: AES/CTS, 6: AES/CFB
+          Note 1: The only valid argument is '6'
+          Note 2: This option must be specified together with '-a'
+   -E <optype>:[<window>:[<incept>:[<type>:[<start>:[<dur>]]]]]>
+      Optional args for rendering a permit.
+       <optype> op type disconnect=1, connect=2, lcs_create=3, lcs_cancel=6
+       <window> time permit is valid, mins
+       <incept> incept unix time, can be an offset
+                0=1-1-1970, now+10=10secs from now, now-10=10secs ago
+       <type> target type 1:device (-m required) 2:group
+       <start> lcs evt start unix time, can be an offset
+               946684800=1-1-2000, now+10=10 secs from now, now-10=10 secs ago
+       <dur> lcs evt duration secs
+       Note: Valid for lcs permits only
+   -f <filespec> : Write binary response to file
+   -F : Print response data using alternate formatting
+   -g : Send commands via gwncc daemon
+   -G <IPv6> : Gwncc daemon IP address
+   -h : Help (this message)
+   -i : Send command to NIC attached to gwncc daemon
+   -j : use JSON message encoding
+   -I <filespec> : Display binary response from file
+   -J <filespec_pfx> : Prefix for the .x509 & .Skey files needed for generating
+          a bunker permit
+   -K <keystore> : pathname of keykeep.store (default: ./keykeep.store)
+   -k <64x> : Secret, from which keys are derived (32 bytes)
+   -L : Expand 00s in read table/offset response
+   -m <MAC> : MAC address of destination node, used for IPv4 addresses
+   -M : Set up link layer maintenance link via gwncc daemon
+          Note: With this option, command type is replaced by 2 cert file names
+                (unless the -C option is used)
+          E.g., 'net_mgr_lite -m <target_mac> -M privkey.pkc8 pubkey.x509'
+   -n <IPv4> : IPv4 address of nameserver for resolving the destination hostname
+   -o <filespec> : File to write the net_mgr request to, instead of sending it
+   -p <d> : UDP port for net_mgr commands
+   -P <d> : Gwncc daemon port
+   -Q <d> : QoS (TOS) value for net_mgr commands
+   -q : Suppress zero-value entries in stat printouts
+   -r <filespec> : Write full binary response with net_mgmt headers to file
+   -R <n> : Total number of tries (0=unlimited)
+   -s : Display OSTime and system_time
+   -S <IPv6> : Set source address in IPv6 message
+   -t <d> : Timeout to wait for a response [sec]
+   -T : Tear down link layer maintenance link
+          Note: With this option, command type is disregarded
+   -v : Verbose mode (show request/response packet hexdumps, etc.)
+          Note: Can be specified more than once for more verbosity
+   -V : Print version info
+   -w : use protocol buffer message encoding
+   -Y <n>: Console features bitmap:
+          0x1 - Disable bold emphasis in diag log
+          0x2 - Don't show Manufacturing TID/PID in diag log
+   -z : Enable compressing the response [net_mgr will unzip it]
+   -Z : Enable compressing the request
+
+   Note: <d>=decimal, <x>=hex, <n>=auto-base; preceding # shows required digits
+
+ Command types:
+   bad_nodeq                battery                  bridge_cfg
+   bunker_permit            c1219_password           c1219_script
+   c1219_time               c1219_ts_enable          c1219_ts_gmtoff
+   c1219_ts_ignore_gmtoff   c1219_ts_set_date        c1219_ts_sync_drift
+   c1219_ts_sync_itvl       c1219_ts_trigger         c1219_upgrade
+   certs                    chanstats                conf
+   conf                     cosem                    cosem_seal
+   crls                     crypto_validate          dcache
+   dns                      dns_retry_conf           echo
+   event                    events                   evlog_pause
+   evstatus                 evtlog                   fsu_route
+   fwall                    get_version_str          gmi
+   han_2_4_status           ip_rt                    last_gasp
+   memstat                  meter_access_suspend     meter_cfg
+   meter_cfg_seal           meter_display            meter_dl_cfg
+   meter_dl_reg_read        meter_dl_state           meter_el_status
+   meter_reg_cfg            meter_reg_read           meter_sr_cfg
+   meter_sr_cfg_v1          meter_test_mode          mlme_disc_mac
+   mlme_purge_saved_nodes   mlme_restart_aggr_disc   mt_timer_state
+   mutt_cfg_file            net_bcast                nexthop
+   nh_single                nid_el_data              nid_el_status
+   nlog                     nm_cert_policy           nm_policy
+   nm_sec_assoc             nm_sec_eb                nm_sec_privkey
+   nm_trap                  nm_trap_retry_conf       node_age
+   node_cfg                 nodeq                    nodeq_drop_node
+   nodeq_reset_stats        ntp                      pgm_dev
+   ppp_6in4_v4dest_addr     ppp_v4_loc_addr          pri
+   pri_sig_key              pseal_config             pwrinfo
+   reboot_state             restart                  router_cfg
+   rsm                      slc                      snmp
+   snmp_trap                srt                      srt_hdl_list
+   srt_link_cost            srt_ral                  srt_rpl
+   stat                     sysif                    sysstat
+   sysvar                   time                     time_zone
+   trnet                    ts_ident                 ts_refresh_itvl
+   uart_conf                wan_pinger_addr          wd_6in4_v6src_addr
+   wireless_scope           xcvr_test                zigbee_sec
+
+
+ 'net_mgr_lite <type> help' for specific help on select command types
