@@ -1,0 +1,319 @@
+Tariff Identity : C0MPEF31
+CLEM: FPGD Premier 210 CLEM for ANZ Market with 8 MB Flash
+VARIANT NAME: One 2A CLR,one pulse output
+Invoke Tariff: Immediate
+  Tariff Configuration No: 1
+Energy Type, Channel Definition
+********************************
+Channel  Class                          Description                                                           
+1        Basic                          Active energy, import, net                                            
+2        Derived                        Reactive energy, import                                               
+3        Basic                          Active energy, export, net                                            
+4        Derived                        Reactive energy, export                                               
+STOD Switching Configuration
+****************************
+Demand Window : Fixed Type
+Demand Integration Period (min) : 5
+Demand Sampling    Period (min) : 0
+Energy Channel to use for Rate Registers     : None
+Energy Channel to use for Demand Calculation : None
+Day Type Definitions
+--------------------
+DayType   St. Time  End Time  Rate Reg MD Reg    Output    Switch   Load Cycling
+01        00:00     07:00     00       None      None      2,       None  
+01        07:00     23:00     00       None      None      None     None  
+01        23:00     24:00     00       None      None      2,       None  
+02        00:00     07:00     00       None      None      2,       None  
+02        07:00     23:00     00       None      None      None     None  
+02        23:00     24:00     00       None      None      2,       None  
+03        00:00     24:00     00       None      None      None     None  
+04        00:00     24:00     00       None      None      None     None  
+05        00:00     24:00     00       None      None      None     None  
+06        00:00     24:00     00       None      None      None     None  
+07        00:00     24:00     00       None      None      None     None  
+08        00:00     24:00     00       None      None      None     None  
+09        00:00     24:00     00       None      None      None     None  
+10        00:00     24:00     00       None      None      None     None  
+11        00:00     24:00     00       None      None      None     None  
+12        00:00     24:00     00       None      None      None     None  
+13        00:00     24:00     00       None      None      None     None  
+14        00:00     24:00     00       None      None      None     None  
+15        00:00     24:00     00       None      None      None     None  
+16        00:00     24:00     00       None      None      None     None  
+Season Dates   DOW   Mon   Tue   Wed   Thu   Fri   Sat   Sun
+------------   ---   ---   ---   ---   ---   ---   ---   ---
+ 1 Jan         ---   01    01    01    01    01    02    02    
+Public Holiday Dates Definition
+*******************************
+Holiday Section is Disable, No Holiday is defined in this Tariff
+Billing Dates Definition
+*************************
+Billing Section is Disable, No billing date is defined in this Tariff
+DST Definition
+***************
+DST Section is Disable, No DST is defined in this Tariff
+Input /Output Pin Configuration
+********************************
+PIN   STATE  FUNCTIONS 
+1     Output Not Used  
+Displays
+*********
+Page boundaries : Regard 
+Displays Scrolling
+Normal Timeout ( 0 = disable )      : 5
+Auto Scroll Timeout ( 0 = disable ) : 10
+Start Auto Scrolling  : With the Next Display in the List
+Energy Display Scaling  : XXXXXX . X kwh
+Test Mode Time Out in minutes: 30
+Display Leading Zero: Not Supported 
+Index No.  Displayed Information                              Identifier          
+1          Current Time from the Base Time                     1
+2          Current Date from the Base Time                     2
+3          Channel 1 Energy Register Current                   3
+4          Channel 3 Energy Register Current                   5
+5          Channel 2 Energy Register Current                   13
+6          Channel 4 Energy Register Current                   14
+7          Display test - all segments on                      888
+8          Page Separator                                      0
+9          Page Number of the current display page             2
+10         Tariff name                                         0
+11         CLEM program name                                   0
+12         Meter status                                        0
+13         Battery Status                                      0
+14         WAN Status                                          0
+15         LAN Status                                          0
+16         HAN Status                                          0
+17         MAC ID - Upper                                      1
+18         MAC ID - Lower                                      2
+19         Antenna Information                                 0
+20         Page Separator                                      0
+21         Page Number of the current display page             3
+22         Line current:phase 1                                1
+23         Phase voltage: phase 1                              1
+24         Line current:phase 2                                2
+25         Phase voltage: phase 2                              2
+26         Line current:phase 3                                3
+27         Phase voltage: phase 3                              3
+28         Net active power: 3 phase                           0
+29         Reactive power: 3 phase                             0
+30         Apparent power: 3 phase                             0
+31         Frequency                                           0
+32         Power Factor and Quadrant : 3 phase                 0
+33         Energy High Resolution Channel 0                    0
+Survey Definitions
+*******************
+The period between samples in the Load Survey (Logger1)5 Min.
+The period between samples in the Load Survey (Logger2) 5 Min.
+The number of energy channels in the survey        4
+The number of instantaneous parameter in the Survey(Logger2)   0
+Conditional Monitoring
+***********************
+Test for low power factor : Each phase individually
+Test for low power factor in IEC power quadrant 1(active import,reactive import): Yes
+Test for low power factor in IEC power quadrant 2(active export,reactive import): Yes
+Test for low power factor in IEC power quadrant 3(active export,reactive export): Yes
+Test for low power factor in IEC power quadrant 4(active import,reactive export): Yes
+Suppress setting survey power fail flag when phase failure: No
+Voltage failure threshold/Outage detection threshold    :77.0 %
+Voltage sag threshold   :86.0 %
+Voltage swell threshold   :108.0 %
+Over-current threshold      :100.0 %
+Reverse run threshold       :No monitoring
+Low power factor threshold  :0.752
+Current threshold for low power factor checks  :5.0 %
+Over Voltage threshold   :105.0 %
+Under Voltage threshold   :90.0 %
+Voltage variation persistence time : 0060 secs
+Voltage Sag & swell voltage persistence time : 0060 secs
+Current variation persistence time : 0060 secs
+Persistence time for power factor checks: 0060 secs
+Voltage failure persistence time : 0060 secs
+Voltage failure restoration threshold   :80.0 %
+Voltage sag restoration threshold   :89.0 %
+Voltage swell restoration threshold   :105.0 %
+Over-current restoration threshold      :97.0 %
+Low power factor restoration threshold  :0.772
+Over Voltage restoration threshold   :102.0 %
+Under Voltage restoration threshold   :93.0 %
+General Communications
+**********************
+Baud rate on communication channel A, non-priority port 9600
+Baud rate on communication channel C, non-priority port 9600
+Reset Register Disabled
+Modem Control
+*************
+Time of day at which the Modem is turned off  00:00
+Time of day at which the Modem is turned on   00:00
+Cyclic Reset Period                           1 Hrs.Metrological LED
+*****************
+Multiplier Value is 5000
+LED 1 blinking on : Active energy, import, net ( Basic )
+LED 2 blinking on : Reactive energy, import ( Derived )
+Time Adjustment
+****************
+The Time Adjustment to be applied, in 1-seconds units  180 Seconds
+Synchronous Time Switch as per AS62054-Part 21
+Minimum Time Adjustment to be set: 0 seconds
+Switch Control
+**************
+Common Control
+----------------------------------------
+Fixed off time / fixed period switching: Use fixed off time switching
+Diversity time:  Random time for diversity period
+Main Switch off on PDD : Disabled
+Mains Supply Contactor Switching in Engineering Mode : Enabled
+Internal Load Control Switch off on PDD : Disabled
+External Load Control Switch off on PDD : Disabled
+Arming Time out duration is ( in Minutes): 0
+Minimum Duration of Power outage is ( in Seconds): 0
+Diversity Time
+----------------------------------------
+Diversity Time
+Switch      Feature      Min Divesity       Max Diversity       Resolution 
+02          002          000 (mins)          005 (mins)           003 (secs)             
+Switch No      - 00     01         02
+Switch Details - Main   Internal   External
+Feature No      - 000                    001            002
+Feature Details - Main Switch Power Up   Load Cycling   Remote Command/STOD
+Boost options
+----------------------------------------
+Boost options: disabled
+Boost termination: disabled
+Boost Primacy: disabled
+Fast load shed
+----------------------------------------
+Fast load shed disabled
+Supply capacity control
+----------------------------------------
+Load Cycling
+----------------------------------------
+Event Enable
+************
+1.Low Battery
+2.Meter Hardware Fault/Critical Error
+3.Time Synchronization
+4.Power Supply Failure(Last Gasp)
+5.Power Supply Restored
+6.L1 Under Voltage
+7.L1 Over Voltage
+8.Wrong Phase Sequence
+9.Unauthorized Export Of Energy Start
+10.Local Read
+11.Local Change Of Parameter
+12.Firmware Activation
+13.Password Changed
+14.L2 Under Voltage
+15.L2 Over Voltage
+16.L3 Under Voltage
+17.L3 Over Voltage
+18.L1 Voltage Missing/Failure
+19.L2 Voltage Missing/Failure
+20.L3 Voltage Missing/Failure
+21.Terminal Cover Removed
+22.Terminal Cover Replaced
+23.Device ID Change
+24.Key Change
+25.MD Reset
+26.Inter Processor Communication Fail
+27.Front Cover Removed
+28.Front Cover Replaced
+29.Tariff Invocation
+30.Tariff Download
+31.Time Set
+32.L1 Under Voltage Restoration
+33.L2 Under Voltage Restoration
+34.L3 Under Voltage Restoration
+35.L1 Over Voltage Restoration
+36.L2 Over Voltage Restoration
+37.L3 Over Voltage Restoration
+38.L1 Voltage Missing/Failure Restoration
+39.L2 Voltage Missing/Failure Restoration
+40.L3 Voltage Missing/Failure Restoration
+41.Wrong Phase Sequence restoration
+42.Program Re-boot
+43.Unauthorized export of energy end
+44.Deviation of Local to UTC changed
+45.NVM Failure
+46.Authorised Cover Open Time Start
+47.Authorised Cover Open Time End
+48.Authorised Cover Open Time Set
+49.Low PF - start on [phase 1]
+50.Low PF - start on [phase 2]
+51.Low PF - start on [phase 3]
+52.Low PF - end on [phase 1]
+53.Low PF - end on [phase 2]
+54.Low PF - end on [phase 3]
+55.Over current - start on [phase 1]
+56.Over current - start on [phase 2]
+57.Over current - start on [phase 3]
+58.Over current - end on [phase 1]
+59.Over current - end on [phase 2]
+60.Over current - end on [phase 3]
+61.Voltage dip / sag - start on [phase 1]
+62.Voltage dip / sag - start on [phase 2]
+63.Voltage dip / sag - start on [phase 3]
+64.Voltage dip / sag - end on [phase 1]
+65.Voltage dip / sag - end on [phase 2]
+66.Voltage dip / sag - end on [phase 3]
+67.Voltage surge / swell - start on [phase 1]
+68.Voltage surge / swell - start on [phase 2]
+69.Voltage surge / swell - start on [phase 3]
+70.Voltage surge / swell - end on [phase 1]
+71.Voltage surge / swell - end on [phase 2]
+72.Voltage surge / swell - end on [phase 3]
+73.Enable Boost Primacy
+74.Disable Boost Primacy
+75.Under Frequency Start
+76.Under Frequency End
+77.Enable Demand Limit for Auxiliary-2
+78.Disable Demand Limit for Auxiliary-2
+79.Auxiliary-2 On by Priority Override
+80.Auxiliary-2 Off by Priority Override
+81.Auxiliary-2 Off Demand Limit
+82.Auxiliary-2 On Boost
+83.Auxiliary-2 Off Boost
+84.Reset request - Register
+85.Change Mac Id
+86.Inter processor communication restored
+87.NIC antenna switched to internal
+88.NIC antenna switched to external
+Co-Gen Site Enabled
+Event Alarm Enable
+************
+1.Low Battery
+2.Meter Hardware Fault/Critical Error
+3.Time Synchronization
+4.Power Supply Failure(Last Gasp)
+5.Power Supply Restored
+6.Wrong Phase Sequence
+7.Local Change Of Parameter
+8.Firmware Activation
+9.Password Changed
+10.Terminal Cover Removed
+11.Terminal Cover Replaced
+12.Device ID Change
+13.Key Change
+14.MD Reset
+15.Inter Processor Communication Fail
+16.Front Cover Removed
+17.Front Cover Replaced
+18.Tariff Invocation
+19.Tariff Download
+20.Time Set
+21.Wrong Phase Sequence restoration
+22.Program Re-boot
+23.Deviation of Local to UTC changed
+24.NVM Failure
+25.Over current - start on [phase 1]
+26.Over current - start on [phase 2]
+27.Over current - start on [phase 3]
+28.Over current - end on [phase 1]
+29.Over current - end on [phase 2]
+30.Over current - end on [phase 3]
+31.Reset request - Register
+32.Change Mac Id
+33.Inter processor communication restored
+34.NIC antenna switched to internal
+35.NIC antenna switched to external
+--------------------------------- End of Tariff Details --------------------------------
+Version   : 7.00.00 Revision : 13211 Print Date : 01-Mar-2024 14:00:44
